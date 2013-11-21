@@ -12,7 +12,7 @@
       <td>Oversized SSD</td><td>Just 2mm too big</td><td>£90.00</td>
       <td>
         <form action="/buy" method="POST">
-          <input type="hidden" name="price[cost]" value="90">
+          <input type="hidden" name="price" value="90">
           <input type="hidden" name="description" value="Oversized SSD">
           <input type="submit" value="Buy it">
         </form>

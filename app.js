@@ -21,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -37,7 +38,7 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 app.post('/subscribe', function(req, res) {
-var url = gocardless.subscription.newUrl({
+  var url = gocardless.subscription.newUrl({
   amount: '30.00',
   interval_length: '1',
   interval_unit: 'month',
@@ -51,7 +52,7 @@ res.redirect(url);
 
 
 app.post('/preauth', function(req, res) {
-var url = account.gocardless.preAuthorization.newUrl({
+var url = gocardless.preAuthorization.newUrl({
   max_amount: '10.00',
   interval_length: '2',
   interval_unit: 'month',
@@ -63,10 +64,13 @@ res.redirect(url);
 }); 
 
 app.post('/buy', function(req, res) {
+	var descript  = req.body.description
+	var cost = req.body.price
+  	
     var url = gocardless.bill.newUrl({
-    amount: '10.00',
-    name: 'Fried Fish',
-    description: 'Delicious Fried Chicken'
+    amount: cost,
+    name: descript,
+    //description: 'Delicious Fried Chicken'
 
 });
 
