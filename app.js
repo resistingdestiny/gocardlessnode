@@ -34,6 +34,17 @@ app.get('/', routes.index);
 app.get('/thanks', thanks.whole);
 
 
+
+app.get('/bills', function(req, res) {
+  gocardless.bill.index(function(error, response, data) {
+    res.render('bills', data);
+
+  });
+});
+
+
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
