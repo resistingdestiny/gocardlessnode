@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+
+<h3> Thank you for shopping </h3>
+<p> You will be redirected momentarily </p>
+
+
+
+<script type="text/javascript">
+setTimeout("window.location='/'",3000);
+</script>
+
+
+
+
+</html> 
