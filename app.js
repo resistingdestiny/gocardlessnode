@@ -6,8 +6,6 @@ var config = require('./accountdetails')
 var gocardless = require('gocardless')(config);
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
-var catalog = require('./routes/catalog');
 var http = require('http');
 var path = require('path');
 
@@ -31,8 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/catalog', catalog.whole);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -1,12 +1,75 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
-    <p> {{ title }}{{ title }}{{ title }}{{ title }}{{ title }}{{ title }}{{ title }}{{ title }}</p>
-  </body>
+
+<h3>One-off purchases</h3>
+<p>
+  <table border="1">
+    <tr>
+      <th>Name</th><th>Description</th><th>Price</th><th>Buy</th>
+    </tr>
+    <tr>
+      <td>Oversized SSD</td><td>Just 2mm too big</td><td>£90.00</td>
+      <td>
+        <form action="/buy" method="POST">
+          <input type="hidden" name="price[cost]" value="90">
+          <input type="hidden" name="description" value="Oversized SSD">
+          <input type="submit" value="Buy it">
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>Harry's laptop</td><td>Good value!</td><td>£1000.00</td>
+      <td>
+        <form action="/buy" method="POST">
+          <input type="hidden" name="price" value="1000">
+          <input type="hidden" name="description" value="Harry's laptop">
+          <input type="submit" value="Buy it">
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>Tom's wine</td><td>Red, white, blue</td><td>£24.00</td>
+      <td>
+        <form action="/buy" method="POST">
+          <input type="hidden" name="price" value="24">
+          <input type="hidden" name="description" value="Tom's wine">
+          <input type="submit" value="Buy it">
+        </form>
+      </td>
+    </tr>
+  </table>
+</p>
+
+<h3>Subscriptions</h3>
+<p>
+You can also sign up to receive an item every month, costing you £1.50
+incl. shipping. The setup fee for this subscription is £10.
+<form action="/subscribe" method="POST">
+  <input type="hidden" name="amount" value="1.50">
+  <input type="hidden" name="interval" value="month">
+  <input type="hidden" name="interval_length" value="1">
+  <input type="hidden" name="setup_fee" value="10.00">
+  <input type="submit" value="Subscribe">
+</form>
+</p>
+
+<h3>Pre-authorizations</h3>
+<p>
+Alternatively, you can sign up for a special type of subscription. By
+subscribing, you effectively authorize the merchant to claim up to £15
+every three months from your bank account.
+<form action="/preauth" method="POST">
+  <input type="hidden" name="amount" value="15">
+  <input type="hidden" name="interval" value="month">
+  <input type="hidden" name="interval_length" value="3">
+  <input type="submit" value="Authorize">
+</form>
+</p>
+
+<p>
+For more information and options on how to use the API, please refer to the
+<a href="https://sandbox.gocardless.com/docs/ruby/merchant_client_guide" title="Library documentation">
+  library documentation</a>.
+</p>
 </html>
