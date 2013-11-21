@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<link href="http://www.earthfund.co.uk/parliament/bootstrap.min.css" rel="stylesheet">
+<link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
 <h2> Test title for Bills </h2>
 
 <table>
