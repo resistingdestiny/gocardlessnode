@@ -2,7 +2,15 @@
 
 <html>
 
-<h1>{{title}}{{ amount }} </h1>
-<h2> Yeah well </h2>
+<h2> Test title for Bills </h2>
 
-</html>
+<table>
+{{#bills}}
+  <tr>
+    <td>{{amount}}</td>
+    <td>{{name}}</td>
+  </tr>
+{{/bills}}
+</table>
+
+</html

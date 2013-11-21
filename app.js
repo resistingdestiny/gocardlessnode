@@ -37,12 +37,9 @@ app.get('/thanks', thanks.whole);
 
 app.get('/bills', function(req, res) {
   gocardless.bill.index(function(error, response, data) {
-    res.render('bills', data);
-
+    res.render('bills', { bills: data });
   });
 });
-
-
 
 
 http.createServer(app).listen(app.get('port'), function(){
