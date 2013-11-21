@@ -2,13 +2,21 @@
 
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
-<h2> Test title for Bills </h2>
+<h3> List of Bills </h3>
 
-<table>
+<table class="table table-hover">
 {{#bills}}
   <tr>
-    <td>{{amount}}</td>
+  	<th>Amount</th>
+    <td>£{{amount}}</td>
+    </tr>
+    <tr>
+    <th> Name </th>
     <td>{{name}}</td>
+  </tr>
+  <tr>
+    <th>    </th>
+    <td>    <td>
   </tr>
 {{/bills}}
 </table>

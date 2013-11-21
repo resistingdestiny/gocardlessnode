@@ -49,11 +49,12 @@ http.createServer(app).listen(app.get('port'), function(){
 
 app.post('/subscribe', function(req, res) {
   var url = gocardless.subscription.newUrl({
-  amount: '30.00',
+  amount: '1.25',
   interval_length: '1',
   interval_unit: 'month',
   name: 'Coffee',
-  description: 'Fresh roast coffee subscription'
+  description: 'Fresh roast coffee subscription',
+  setup_fee: '10.00'
 });
 
 res.redirect(url);
@@ -63,8 +64,8 @@ res.redirect(url);
 
 app.post('/preauth', function(req, res) {
 var url = gocardless.preAuthorization.newUrl({
-  max_amount: '10.00',
-  interval_length: '2',
+  max_amount: '15.00',
+  interval_length: '3',
   interval_unit: 'month',
   name: 'Pizza',
   description: 'Pizza every single month'

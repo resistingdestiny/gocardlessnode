@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 
+ 
+
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+
+
 <h3>One-off purchases</h3>
 <p>
   <table class="table table-hover">
