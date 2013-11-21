@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-
+<link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
 <h3>One-off purchases</h3>
 <p>
-  <table border="1">
+  <table class="table table-hover">
     <tr>
       <th>Name</th><th>Description</th><th>Price</th><th>Buy</th>
     </tr>
@@ -14,7 +14,7 @@
         <form action="/buy" method="POST">
           <input type="hidden" name="price" value="90">
           <input type="hidden" name="description" value="Oversized SSD">
-          <input type="submit" value="Buy it">
+          <input type="submit" class="btn btn-primary" value="Buy it">
         </form>
       </td>
     </tr>
@@ -24,7 +24,7 @@
         <form action="/buy" method="POST">
           <input type="hidden" name="price" value="1000">
           <input type="hidden" name="description" value="Harry's laptop">
-          <input type="submit" value="Buy it">
+          <input type="submit" class="btn btn-primary" value="Buy it">
         </form>
       </td>
     </tr>
@@ -34,7 +34,7 @@
         <form action="/buy" method="POST">
           <input type="hidden" name="price" value="24">
           <input type="hidden" name="description" value="Tom's wine">
-          <input type="submit" value="Buy it">
+          <input type="submit"class="btn btn-primary" value="Buy it">
         </form>
       </td>
     </tr>
@@ -50,7 +50,7 @@ incl. shipping. The setup fee for this subscription is £10.
   <input type="hidden" name="interval" value="month">
   <input type="hidden" name="interval_length" value="1">
   <input type="hidden" name="setup_fee" value="10.00">
-  <input type="submit" value="Subscribe">
+  <input type="submit" class="btn btn-success" value="Subscribe">
 </form>
 </p>
 
@@ -63,7 +63,7 @@ every three months from your bank account.
   <input type="hidden" name="amount" value="15">
   <input type="hidden" name="interval" value="month">
   <input type="hidden" name="interval_length" value="3">
-  <input type="submit" value="Authorize">
+  <input type="submit" class="btn btn-success" value="Authorize">
 </form>
 </p>
 
