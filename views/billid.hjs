@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+<h3> Get Bill by ID </h3>
+
+<table class="table table-hover">
+{{#bill}}
+  <tr>
+  	<th>Amount</th>
+    <td>£{{amount}}</td>
+    </tr>
+    <tr>
+    <th> Name </th>
+    <td>{{name}}</td>
+    <th> Name </th>
+    <td>{{name}}</td>
+    <th> Name </th>
+    <td>{{name}}</td>
+  </tr>
+  <tr>
+    <th>    </th>
+    <td>    <td>
+  </tr>
+{{/bill}}
+</table>
+
+</html

@@ -4,7 +4,7 @@
 
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
-<link href="../public/stylesheets/style.css" rel="stylesheet">
+
 
 <h3>One-off purchases</h3>
 <p>
@@ -28,6 +28,16 @@
         <form action="/buy" method="POST">
           <input type="hidden" name="price" value="1000">
           <input type="hidden" name="description" value="Harry's laptop">
+          <input type="submit" class="btn btn-primary" value="Buy it">
+        </form>
+      </td>
+    </tr>
+     <tr>
+      <td>Delicious Fried Chicken</td><td>Dayymm it's good</td><td>£200.00</td>
+      <td>
+        <form action="/buy" method="POST">
+          <input type="hidden" name="price" value="200">
+          <input type="hidden" name="description" value="Delicious Fried Chickens">
           <input type="submit" class="btn btn-primary" value="Buy it">
         </form>
       </td>

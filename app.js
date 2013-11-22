@@ -73,19 +73,14 @@ app.get('/preauthorization', function(req, res) {
   });
 });
 
-app.get('/bills/:id', function(req, res) {
-	gocardless.bill.find(req.params.id, function(error, response, data) {
-	data = JSON.parse(data);
-	res.render('billid', { bill:data });
+app.get('/billid/:id', function(req, res) {
+	gocardless.bill.find(req.params.id, function(error, response, data)  {										
+		data = JSON.parse(data);
+		res.render('billid', { bill:data });
 	
-});
+	});
 });
 
-gocardless.bill.get({
-  id: '#0G6KV368J2#'
-}, function(err, response, body) {
-  console.log(body); // => Object
-});
 
 
 
