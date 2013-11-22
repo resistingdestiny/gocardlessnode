@@ -17,5 +17,3 @@ If this app is going live then remove 'sandbox : true' from the accountdetails.j
 
 Created as part of Work Experience with GoCardless 18th - 22nd November 2013 
 
-
-test key
