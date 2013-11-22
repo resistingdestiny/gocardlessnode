@@ -81,6 +81,21 @@ app.get('/billid/:id', function(req, res) {
 	});
 });
 
+app.get('/subid/:id', function(req, res) {
+	gocardless.subscription.find(req.params.id, function(error, response, data)  {										
+		data = JSON.parse(data);
+		res.render('subid', { subid:data });
+	
+	});
+});
+
+app.get('/authid/:id', function(req, res) {
+	gocardless.preAuthorization.find(req.params.id, function(error, response, data)  {										
+		data = JSON.parse(data);
+		res.render('authid', { authid:data });
+	
+	});
+});
 
 
 

@@ -3,27 +3,33 @@
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
 <div class="body_left" style="margin:30px 30px 0px 30px;">
-<h3> List of Bills </h3> 
+<h3> Bill for {{#authid}} {{name}} {{/authid}}</h3>
 
 <table class="table table-hover">
+{{#authid}}
 <tr>
-      <th>Amount</th><th>Name</th><th>ID</th>
-    </tr>
-{{#bills}}
-	
-  <tr>
-  	
-    <td>£{{amount}}</td>  
+    <th> Name </th>
     <td>{{name}}</td>
-    <td><a href="/billid/{{id}}">{{id}}</a></td>
-
-  
+    
   </tr>
   <tr>
+  	<th>Set-up Fee</th>
+    <td>£{{setup_fee}}</td>
+    </tr>
+    <tr>
+    <th> Max Amount </th>
+    <td>£{{max_amount}}</td>
 
   </tr>
-{{/bills}}
+  <tr>
+    <th> Description </th>
+    <td>{{description}}</td>
+    
+  </tr>
+
+{{/authid}}
 </table>
 <a style="text-decoration:underline;" href="/"> Go back to home </a>
 </div>
+
 </html

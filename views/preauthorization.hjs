@@ -2,29 +2,33 @@
 
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+<div class="body_left" style="margin:30px 30px 0px 30px;">
 <h3> List of PreAuthorizations </h3>
 
 <table class="table table-hover">
-{{#preauthorization}}
-  <tr>
-  	<th>Set-up Fee</th>
-    <td>£{{setup_fee}}</td>
+<th>ID</th><th>Set-up Fee</th><th>Max Amount</th><th>Description</th>
     </tr>
-    <tr>
-    <th> Max Amount </th>
+{{#preauthorization}}
+<tr>
+  
+    <td><a href="/authid/{{id}}">{{id}}</a></td>
+
+
+    <td>£{{setup_fee}}</td>
+   
     <td>£{{max_amount}}</td>
 
-  </tr>
-  <tr>
-    <th> Description </th>
     <td>{{description}}</td>
     
-  </tr>
-  <tr>
-    <th>    </th>
-    <td>    <td>
+
+ 
+    
   </tr>
 {{/preauthorization}}
 </table>
+
+<a style="text-decoration:underline;" href="/"> Go back to home </a>
+
+</div>
 
 </html

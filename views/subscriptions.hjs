@@ -2,33 +2,29 @@
 
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+<div class="body_left" style="margin:30px 30px 0px 30px;">
 <h3> List of Subscriptions </h3>
 
 <table class="table table-hover">
-{{#subscriptions}}
 <tr>
-    <th>Name</th>
-    <td>{{name}}</td>
+      <th>Name</th><th>ID</th><th>Set-up Fee</th><th>Amount</th><th>Description</th>
     </tr>
-  <tr>
-  	<th>Set-up Fee</th>
-    <td>£{{setup_fee}}</td>
-    </tr>
-    <tr>
-    <th>Amount </th>
-    <td>£{{amount}}</td>
+{{#subscriptions}}
 
-  </tr>
-  <tr>
-    <th> Description </th>
-    <td>{{description}}</td>
+    <td>{{name}}</td>
     
-  </tr>
-  <tr>
-    <th>    </th>
-    <td>    <td>
-  </tr>
+      <td><a href="/subid/{{id}}">{{id}}</a></td>
+   
+      <td>£{{setup_fee}}</td>
+    
+      <td>£{{amount}}</td>
+    
+      <td>{{description}}</td> 
+    </tr>
+
 {{/subscriptions}}
 </table>
+<a style="text-decoration:underline;" href="/"> Go back to home </a>
+</div>
 
 </html
