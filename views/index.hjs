@@ -3,9 +3,10 @@
  
 
 <html>
+
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
 
-
+<div class="body_left" style="margin:30px 30px 0px 30px;">
 <h3>One-off purchases</h3>
 <p>
   <table class="table table-hover">
@@ -33,7 +34,7 @@
       </td>
     </tr>
      <tr>
-      <td>Delicious Fried Chicken</td><td>Dayymm it's good</td><td>£200.00</td>
+      <td>Delicious Fried Chicken</td><td>Damn this is good chicken</td><td>£200.00</td>
       <td>
         <form action="/buy" method="POST">
           <input type="hidden" name="price" value="200">
@@ -54,7 +55,7 @@
     </tr>
   </table>
 </p>
-<div class="below_table">
+
 <h3>Subscriptions</h3>
 <p>
 You can also sign up to receive an item every month, costing you £1.50
@@ -67,6 +68,7 @@ incl. shipping. The setup fee for this subscription is £10.
   <input type="hidden" name="interval_length" value="1">
   <input type="hidden" name="setup_fee" value="10.00">
   <input type="submit" class="btn btn-success" value="Subscribe">
+  <a style="margin-left:7px;" class="btn btn-success" href="/subscriptions">View</a>
 
 </form>
 
@@ -83,12 +85,25 @@ every three months from your bank account.
   <input type="hidden" name="interval" value="month">
   <input type="hidden" name="interval_length" value="3">
   <input type="submit" class="btn btn-success" value="Authorize">
+  <a style="margin-left:7px;" class="btn btn-success" href="/preauthorization">View</a>
 </form>
 </p>
 
+<h3>Bills</h3>
 <p>
+You can view your bills either by appending /bills/id onto this url or clicking the button below. <br>
+<a class="btn btn-success" href="/bills">View</a>
+
+</p>
+
+
+
+<!-- <p>
 For more information and options on how to use the API, please refer to the
 <a href="https://sandbox.gocardless.com/docs/ruby/merchant_client_guide" title="Library documentation">
   library documentation</a>.
-</p>
+</p> -->
+</div>
+
 </html>
+
