@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+<h3> List of Users </h3>
+
+<table class="table table-hover">
+{{#users}}
+  <tr>
+  	<th>ID</th>
+    <td>{{id}}</td>
+    </tr>
+    <tr>
+    <th> First Name </th>
+    <td>{{first_name}}</td>
+  </tr>
+  <tr>
+    <th> Last Name </th>
+    <td>{{last_name}}</td>
+  </tr>
+  <tr>
+    <th>    </th>
+    <td>    <td>
+  </tr>
+{{/users}}
+</table>
+
+</html

@@ -31,8 +31,17 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/thanks', thanks.whole);
-
+app.get('/thanks', function(req, res) {
+  if (!gocardless.verifySignature(req.query, config.appSecret)) return res.end(403);
+ 
+  gocardless.confirmResource({
+    resource_id: req.query.resource_id,
+    resource_type: req.query.resource_type
+  }, function(err, request, body) {
+    res.render('thanks', { title: 'Thank you' });
+  });
+ 
+  });
 
 
 app.get('/bills', function(req, res) {
@@ -41,6 +50,28 @@ app.get('/bills', function(req, res) {
     res.render('bills', { bills: data });
   });
 });
+
+app.get('/users', function(req, res) {
+  gocardless.user.index(function(error, response, data) {
+  	data = JSON.parse(data);
+    res.render('users', { users: data });
+  });
+});
+
+app.get('/subscriptions', function(req, res) {
+  gocardless.subscription.index(function(error, response, data) {
+  	data = JSON.parse(data);
+    res.render('subscriptions', { subscriptions: data });
+  });
+});
+
+app.get('/preAuthorization', function(req, res) {
+  gocardless.subscription.index(function(error, response, data) {
+  	data = JSON.parse(data);
+    res.render('preauthorization', { preAuthorization: data });
+  });
+});
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
@@ -70,6 +101,9 @@ var url = gocardless.preAuthorization.newUrl({
   name: 'Pizza',
   description: 'Pizza every single month'
 });
+
+
+
 
 res.redirect(url); 
 }); 
