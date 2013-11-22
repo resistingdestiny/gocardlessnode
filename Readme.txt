@@ -11,4 +11,6 @@ module.exports = {
 }
 
 
-This details can be found by signing up at GoCardless.com and then selecting Sandbox and Developer Mode
+This details can be found by signing up at GoCardless.com and then selecting Sandbox and Developer Mode. 
+
+If this app is going live then remove 'sandbox : true' from the accountdetails.js file as well as replace the Sandbox appID's, appSecret's and merchantId's.
