@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
+<h3> List of Subscriptions </h3>
+
+<table class="table table-hover">
+{{#subscriptions}}
+<tr>
+    <th>Name</th>
+    <td>{{name}}</td>
+    </tr>
+  <tr>
+  	<th>Set-up Fee</th>
+    <td>£{{setup_fee}}</td>
+    </tr>
+    <tr>
+    <th>Amount </th>
+    <td>£{{amount}}</td>
+
+  </tr>
+  <tr>
+    <th> Description </th>
+    <td>{{description}}</td>
+    
+  </tr>
+  <tr>
+    <th>    </th>
+    <td>    <td>
+  </tr>
+{{/subscriptions}}
+</table>
+
+</html

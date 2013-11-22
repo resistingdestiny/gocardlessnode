@@ -4,7 +4,7 @@
 
 <html>
 <link href="http://startupdojo.org/wp-content/bootstrap.css" rel="stylesheet">
-
+<link href="../public/stylesheets/style.css" rel="stylesheet">
 
 <h3>One-off purchases</h3>
 <p>
@@ -44,18 +44,23 @@
     </tr>
   </table>
 </p>
-
+<div class="below_table">
 <h3>Subscriptions</h3>
 <p>
 You can also sign up to receive an item every month, costing you £1.50
 incl. shipping. The setup fee for this subscription is £10.
+
+
 <form action="/subscribe" method="POST">
   <input type="hidden" name="amount" value="1.50">
   <input type="hidden" name="interval" value="month">
   <input type="hidden" name="interval_length" value="1">
   <input type="hidden" name="setup_fee" value="10.00">
   <input type="submit" class="btn btn-success" value="Subscribe">
+
 </form>
+
+
 </p>
 
 <h3>Pre-authorizations</h3>

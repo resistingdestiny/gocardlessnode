@@ -33,7 +33,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/thanks', function(req, res) {
   if (!gocardless.verifySignature(req.query, config.appSecret)) return res.end(403);
- 
+
   gocardless.confirmResource({
     resource_id: req.query.resource_id,
     resource_type: req.query.resource_type
@@ -65,11 +65,26 @@ app.get('/subscriptions', function(req, res) {
   });
 });
 
-app.get('/preAuthorization', function(req, res) {
-  gocardless.subscription.index(function(error, response, data) {
+
+app.get('/preauthorization', function(req, res) {
+  gocardless.preAuthorization.index(function(error, response, data) {
   	data = JSON.parse(data);
-    res.render('preauthorization', { preAuthorization: data });
+    res.render('preauthorization', { preauthorization: data });
   });
+});
+
+app.get('/bills/:id', function(req, res) {
+	gocardless.bill.find(req.params.id, function(error, response, data) {
+	data = JSON.parse(data);
+	res.render('billid', { bill:data });
+	
+});
+});
+
+gocardless.bill.get({
+  id: '#0G6KV368J2#'
+}, function(err, response, body) {
+  console.log(body); // => Object
 });
 
 
@@ -121,3 +136,4 @@ app.post('/buy', function(req, res) {
 
     res.redirect(url); 
 }); 
+
