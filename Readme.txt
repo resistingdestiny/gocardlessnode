@@ -16,3 +16,6 @@ This details can be found by signing up at GoCardless.com and then selecting San
 If this app is going live then remove 'sandbox : true' from the accountdetails.js file as well as replace the Sandbox appID's, appSecret's and merchantId's.
 
 Created as part of Work Experience with GoCardless 18th - 22nd November 2013 
+
+
+test key
